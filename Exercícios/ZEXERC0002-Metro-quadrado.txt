@@ -1,0 +1,15 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERC0002
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+report zexerc0002.
+
+data: v_resul type p decimals 2.
+
+parameters: p_med1 type p decimals 2,
+            p_med2 type p decimals 2.
+
+v_resul = p_med1 * p_med2.
+
+write:/ 'A metragem quadrada é:', v_resul.
