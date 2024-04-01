@@ -1,0 +1,15 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERC0003
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+report zexerc0003.
+
+data v_resul type p decimals 2.
+
+parameters: p_valor type p decimals 2,
+            p_perce type p decimals 2.
+
+v_resul = ( p_valor / 100 ) * p_perce.
+
+write:/ 'O valor percentual é:', v_resul.
