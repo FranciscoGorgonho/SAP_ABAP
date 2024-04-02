@@ -1,0 +1,19 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERC0004
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+report zexerc0004.
+
+data: v_litro type p DECIMALS 2,
+      v_valor type p DECIMALS 2.
+
+parameters: p_dista type p decimals 2,
+            p_valor type p decimals 2,
+            p_kmlt  type p decimals 2.
+
+v_litro = p_dista / p_kmlt.
+v_valor = v_litro * p_valor.
+
+WRITE:/ 'Quantidade combustível gasto:', v_litro.
+write:/ 'Valor total gasto:', v_valor.
