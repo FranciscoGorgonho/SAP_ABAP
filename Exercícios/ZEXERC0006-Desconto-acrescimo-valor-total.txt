@@ -1,0 +1,38 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERC0006
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+report zexerc0006.
+
+data: v_val_final type p decimals 2,
+      v_dec_acres type p decimals 2,
+      v_percentu  type p decimals 2.
+
+parameters: p_valor type p decimals 2,
+            p_qtde  type i.
+
+if p_valor <= '100' and p_qtde = 1.
+  v_percentu = '-15'.
+
+elseif p_valor > '100' and p_qtde = 1.
+  v_percentu = '-20'.
+
+elseif p_valor <= '100' and p_qtde <= 3.
+  v_percentu = '-5'.
+
+elseif p_valor > '100' and p_qtde <= 3.
+  v_percentu = '-10'.
+
+elseif p_qtde > 3.
+  v_percentu = '10'.
+endif.
+
+v_dec_acres = ( p_valor / 100 ) * v_percentu.
+v_val_final = p_valor + v_dec_acres.
+
+write:/ 'Valor original:', p_valor,
+      / 'Qtd.parcela(s):', p_qtde,
+      / 'Percentual desconto/acréscimo:', v_percentu,
+      / 'Valor desconto/acréscimo:', v_dec_acres,
+      / 'Valor final:', v_val_final.
